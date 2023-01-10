@@ -1,0 +1,26 @@
+NA_index <- is.na(as.character(data$steps))
+data_no_NA <- data[!NA_index,]
+head(data_no_NA)
+
+##     steps       date interval
+## 289     0 2012-10-02        0
+## 290     0 2012-10-02        5
+## 291     0 2012-10-02       10
+## 292     0 2012-10-02       15
+## 293     0 2012-10-02       20
+## 294     0 2012-10-02       25
+
+#Creating a data frame with the steps taken for each day
+steps_each_day <- aggregate(steps ~ date, data = data_no_NA, sum)
+#Adding column names to the created data frame
+colnames(steps_each_day) <- c("date", "steps")
+
+mean(steps_each_day$steps)
+
+## [1] 10766
+
+median(steps_each_day$steps)
+
+## [1] 10765
+
+hist(as.numeric(steps_each_day$steps), breaks = 20, col = "red", xlab = "Number of Steps", main= "Histogram of the total number of steps taken each day")

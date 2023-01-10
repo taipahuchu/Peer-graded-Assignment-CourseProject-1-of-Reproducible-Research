@@ -1,1 +1,1 @@
-# Peer-graded-Assignment-CourseProject-1-of-Reproducible-Research
+# Peer-graded-Assignment-Course-Project-1-of-Reproducible-Research
